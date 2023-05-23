@@ -2,9 +2,14 @@
 
 <% @tasks.each do |task| %>
 <ul>
-<h3><%= link_to task.title, task_path(task) %></h3>
-<!-- <li><%= task.details %></li> -->
-<!-- <li><%= task.completed %></li> -->
+<h3>
+<% if task.completed %>
+    <i class="fa-solid fa-circle-check"></i>
+  <% else %>
+    <i class="fa-solid fa-circle-xmark"></i>
+    <% end %>
+<%= link_to task.title, task_path(task) %></h3>
+
 </ul>
 <hr>
 <% end %>
